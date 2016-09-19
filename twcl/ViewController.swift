@@ -11,6 +11,7 @@
 //  ツイート長さに合わせて行切り替えとテーブルセルの長さ切り替え
 //  もっさり挙動も直す事
 //  リロードボタンの機能実装する事
+//  現状iPad2のみのレイアウトなのでautolayoutも設定すること
 
 import UIKit
 import Accounts
@@ -76,6 +77,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     @IBAction func pushReload(sender: AnyObject) {
+        //とりあえず全部再取得してるけど後でID使って差分で取得するようにする事
+        self.tweetslist = []
+        self.tweetuserimage = []
+        self.tweetuser = []
+        self.tweettext = []
+        
+        self.tableView.reloadData()
+        
+        //タイムライン取得
+        self.getTimeline(){(timeline: NSMutableArray) -> Void in
+            //書出
+            self.tweetslist = timeline[0] as! NSArray
+            
+            for tweets in self.tweetslist{
+                //ユーザー名
+                self.tweetuser.append((tweets["user"] as! NSDictionary)["name"]! as! String )
+                
+                //プロファイル画像
+                self.tweetuserimage.append((tweets["user"] as! NSDictionary)["profile_image_url_https"]! as! String )
+                
+                //ツイート内容
+                self.tweettext.append(tweets["text"] as! String)
+            }
+        }
+        sleep(2)
         self.tableView.reloadData()
     }
     

@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHp-Pp-9iv">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem title="reload" id="kkP-Z9-jNU">
-                                        <connections>
-                                            <action selector="pushReload:" destination="BYZ-38-t0r" id="SnW-e0-Td4"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nao-vb-Ttp">
                                 <rect key="frame" x="0.0" y="32" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,38 +29,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="T9P-zb-8Bl">
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qQ1-HM-Dtw">
                                                     <rect key="frame" x="8" y="8" width="90" height="90"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="6xU-9w-1P0"/>
-                                                        <constraint firstAttribute="height" constant="90" id="DME-yt-woN"/>
-                                                    </constraints>
-                                                </imageView>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7v1-8O-gqy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="90" id="BOi-n6-DEe"/>
+                                                                <constraint firstAttribute="width" constant="90" id="jCN-F2-M9n"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-Fu-nMx">
                                                     <rect key="frame" x="106" y="8" width="481" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-6D-n7Q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-6D-n7Q">
                                                     <rect key="frame" x="106" y="37" width="486" height="54.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="C3I-6D-n7Q" firstAttribute="leading" secondItem="T9P-zb-8Bl" secondAttribute="trailing" constant="8" id="HwG-fV-3NV"/>
-                                                <constraint firstItem="T9P-zb-8Bl" firstAttribute="leading" secondItem="GI9-sO-XFD" secondAttribute="leadingMargin" id="MnT-fW-RFO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="C3I-6D-n7Q" secondAttribute="trailing" constant="40" id="pwQ-nD-WZO"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="profileimage" destination="T9P-zb-8Bl" id="KqD-6v-zBa"/>
+                                            <outlet property="profileimage" destination="7v1-8O-gqy" id="ldD-Ez-puz"/>
                                             <outlet property="tweettext" destination="C3I-6D-n7Q" id="deL-3a-T4j"/>
                                             <outlet property="user" destination="YJH-Fu-nMx" id="tJb-hh-UFn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHp-Pp-9iv">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="odk-fJ-X2Q"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="reload" id="kkP-Z9-jNU">
+                                        <connections>
+                                            <action selector="pushReload:" destination="BYZ-38-t0r" id="SnW-e0-Td4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -94,7 +97,4 @@
             <point key="canvasLocation" x="206" y="407"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="icon.png" width="300" height="240"/>
-    </resources>
 </document>
