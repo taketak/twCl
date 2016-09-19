@@ -10,13 +10,14 @@
 //  ツイートが長いと省略されるのも修正予定
 //  ツイート長さに合わせて行切り替えとテーブルセルの長さ切り替え
 //  もっさり挙動も直す事
+//  リロードボタンの機能実装する事
 
 import UIKit
 import Accounts
 import Social
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,23 +33,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 //書出
                 self.tweetslist = timeLine[0] as! NSArray
                 
-//                print((self.tweetslist[0]["user"] as! NSDictionary)["name"]!)
-                
                 for tweets in self.tweetslist{
-                    
+                    //ユーザー名
                     self.tweetuser.append((tweets["user"] as! NSDictionary)["name"]! as! String )
                     
+                    //プロファイル画像
+                    self.tweetuserimage.append((tweets["user"] as! NSDictionary)["profile_image_url_https"]! as! String )
+                    
+                    //ツイート内容
                     self.tweettext.append(tweets["text"] as! String)
                     
-                    print(tweets["user"] as! NSDictionary)
+                    // print(tweets["user"] as! NSDictionary)
                     
                 }
-                self.tableView.reloadData()
             }
         }
-        
+        sleep(2)
+        self.tableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,16 +61,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tweetslist.count
+        return tweetslist.count
     }
-
+    
     //セルの内容
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("cellType") as! TableViewCell
-        
+        //ツイート取得済みなら以下処理
         if self.tweetslist.count != 0{
-        cell.setUsername(tweetuser[indexPath.row])
-        cell.setTweetText(tweettext[indexPath.row])
+            cell.setUsername(tweetuser[indexPath.row])
+            cell.setUserprofileimage(tweetuserimage[indexPath.row])
+            cell.setTweetText(tweettext[indexPath.row])
         }
         return cell
     }
@@ -82,6 +86,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var tweetslist = []
     //ツイートしたユーザー
     var tweetuser:[String] = []
+    //ユーザーイメージアドレス
+    var tweetuserimage:[String] = []
     //ツイート内容
     var tweettext: [String] = []
     //ツイッターアカウント取得
@@ -149,6 +155,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-
+    
 }
 

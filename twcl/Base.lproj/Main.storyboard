@@ -39,19 +39,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-6D-n7Q">
-                                                    <rect key="frame" x="99" y="37" width="446" height="54.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="T9P-zb-8Bl">
+                                                    <rect key="frame" x="8" y="8" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="6xU-9w-1P0"/>
+                                                        <constraint firstAttribute="height" constant="90" id="DME-yt-woN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-Fu-nMx">
+                                                    <rect key="frame" x="106" y="8" width="481" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-Fu-nMx">
-                                                    <rect key="frame" x="99" y="8" width="446" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-6D-n7Q">
+                                                    <rect key="frame" x="106" y="37" width="486" height="54.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C3I-6D-n7Q" firstAttribute="leading" secondItem="T9P-zb-8Bl" secondAttribute="trailing" constant="8" id="HwG-fV-3NV"/>
+                                                <constraint firstItem="T9P-zb-8Bl" firstAttribute="leading" secondItem="GI9-sO-XFD" secondAttribute="leadingMargin" id="MnT-fW-RFO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="C3I-6D-n7Q" secondAttribute="trailing" constant="40" id="pwQ-nD-WZO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="profileimage" destination="T9P-zb-8Bl" id="KqD-6v-zBa"/>
                                             <outlet property="tweettext" destination="C3I-6D-n7Q" id="deL-3a-T4j"/>
                                             <outlet property="user" destination="YJH-Fu-nMx" id="tJb-hh-UFn"/>
                                         </connections>
@@ -81,4 +94,7 @@
             <point key="canvasLocation" x="206" y="407"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon.png" width="300" height="240"/>
+    </resources>
 </document>

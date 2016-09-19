@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D92A79411D904F050013AF66 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D92A79401D904F050013AF66 /* icon.png */; };
 		D9AF4B3F1D8FD30500ADBD7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AF4B3E1D8FD30500ADBD7E /* AppDelegate.swift */; };
 		D9AF4B411D8FD30500ADBD7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AF4B401D8FD30500ADBD7E /* ViewController.swift */; };
 		D9AF4B441D8FD30500ADBD7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AF4B421D8FD30500ADBD7E /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D92A79401D904F050013AF66 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		D9AF4B3B1D8FD30500ADBD7E /* twcl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twcl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9AF4B3E1D8FD30500ADBD7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9AF4B401D8FD30500ADBD7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				D9AF4B701D8FDF2900ADBD7E /* TableViewCell.swift */,
 				D9AF4B451D8FD30500ADBD7E /* Assets.xcassets */,
 				D9AF4B471D8FD30500ADBD7E /* LaunchScreen.storyboard */,
+				D92A79401D904F050013AF66 /* icon.png */,
 				D9AF4B4A1D8FD30500ADBD7E /* Info.plist */,
 			);
 			path = twcl;
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92A79411D904F050013AF66 /* icon.png in Resources */,
 				D9AF4B491D8FD30500ADBD7E /* LaunchScreen.storyboard in Resources */,
 				D9AF4B461D8FD30500ADBD7E /* Assets.xcassets in Resources */,
 				D9AF4B441D8FD30500ADBD7E /* Main.storyboard in Resources */,
@@ -499,6 +503,7 @@
 				D9AF4B651D8FD30500ADBD7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9AF4B661D8FD30500ADBD7E /* Build configuration list for PBXNativeTarget "twclTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +512,7 @@
 				D9AF4B681D8FD30500ADBD7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9AF4B691D8FD30500ADBD7E /* Build configuration list for PBXNativeTarget "twclUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +521,7 @@
 				D9AF4B6B1D8FD30500ADBD7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
